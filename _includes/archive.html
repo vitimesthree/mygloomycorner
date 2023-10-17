@@ -1,0 +1,23 @@
+<nav class="upload-nav">
+    <ul>
+        {% for upload in uploads %}
+            <li class="upload list">
+                <a href="{{ upload.url }}">
+                    <div class="upload thumbnail">
+                        <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ upload.title }}">
+                    </div>
+                </a>
+                <div class="upload info">
+                    <div class="upload title">
+                        <a href="{{ upload.url }}">
+                            <h2>{{ upload.title }}</h2>
+                        </a>
+                        {% assign filename = upload.url | split: '/' | last %}
+                        <p>{{filename}}</p>
+                    </div>
+                    <p class="upload description">{{ upload.date | date: "%d %B, %Y" }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

@@ -1,0 +1,45 @@
+<nav class="upload-pagination">
+    {% assign previous = index | minus: 1 %}
+    {% assign previous = uploads[previous] %}
+    <div class="upload control first">
+        {% if index > 0 %}
+            <a href="{{ uploads.first.url }}">
+        {% else %}
+            <a class="upload disabled">
+        {% endif %}
+            &lt;&lt;
+        </a>
+    </div>
+    <div class="upload control previous">
+        {% if index > 0 %}
+            <a href="{{ previous.url }}">
+        {% else %}
+            <a class="upload disabled">
+        {% endif %}
+            &lt;
+        </a>
+    </div>
+    <div class="upload current">
+        {{ index | plus: 1 }} / {{ uploads.size }}
+    </div>
+    {% assign next = index | plus: 1 %}
+    {% assign next = uploads[next] %}
+    <div class="upload control next">
+        {% if next.url %}
+            <a href="{{ next.url }}">
+        {% else %}
+            <a class="upload disabled">
+        {% endif %}
+            &gt;
+        </a>
+    </div>
+    <div class="upload control last">
+        {% if next.url %}
+            <a href="{{ uploads.last.url }}">
+        {% else %}
+            <a class="upload disabled">
+        {% endif %}
+            &gt;&gt;
+        </a>
+    </div>
+</nav>

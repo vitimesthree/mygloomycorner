@@ -7,9 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Page information -->
-    <title>{{ site.title }}</title>
+    {% if page.title %}
+        <title>{{ page.title }} - {{ site.title }}</title>
+    {% else %}
+        <title>{{ site.title }}</title>
+    {% endif %}
     <link rel="icon" href={{ "/favicon.ico" | prepend: site.url }}>
+
+    <!-- Assets -->
+    <link rel="stylesheet" href={{ "/assets/css/main.css" | prepend: site.baseurl }}>
 </head>
 <body>
-    {{ content }}
+    <header class="header">
+        {% include header.html %}
+        {% include navigation.html %}
+    </header>
+    <div class="content">
+        {{ content }}
+    </div>
+    <footer class="footer">
+        {% include footer.html %}
+    </footer>
 </body>

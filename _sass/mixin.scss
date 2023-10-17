@@ -1,0 +1,39 @@
+// Colours
+@mixin wrapper($type: 'default')
+{
+    @if $type == 'default'
+    {
+        color: $foreground;
+        background-color: $background;
+    }
+}
+
+// Fonts
+@mixin font($font)
+{
+    @if $font == 'default'
+    {
+        font-family: $font-default;
+        font-size: 1rem;
+    }
+    @else if $font == 'header'
+    {
+        font-family: $font-header;
+        font-size: 1.5rem;
+    }
+}
+
+// Distances
+@mixin width($content)
+{
+    @if $content == 'content'
+    {
+        max-width: $width-content;
+        width: 100%;
+    }
+    @else if $content == 'mobile'
+    {
+        max-width: $width-mobile;
+        width: 100%;
+    }
+}

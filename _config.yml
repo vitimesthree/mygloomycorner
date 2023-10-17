@@ -25,8 +25,11 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
+imageurl: "/assets/images/"
+videourl: "/assets/videos/" # the subpath to your images, e.g. /assets/images
 url: "https://mygloomycorner.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: vitimesthree
+
+linktree_url: vitimesthree
 github_username:  vitimesthree
 
 defaults:
@@ -35,6 +38,17 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "uploads"
+    values:
+      layout: "view"
+
+# Comic collection
+collections:
+  uploads:
+    output: true
+    permalink: archive/polygraph/:name
 
 # Build settings
 # theme: minima

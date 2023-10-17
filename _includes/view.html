@@ -1,0 +1,27 @@
+<main class="upload-view">
+    <div class="upload upper">
+        {% if upload.image %}
+            <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ title }}">
+        {% elsif upload.video %}
+            <video controls>
+                <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/mp4">
+                Like, come on... you can't play this video with internet explorer... haha...
+            </video>
+        {% comment %} TODO: Add video support to archive and styling {% endcomment %}
+        {% elsif upload.gif %}
+            <video muted loop autoplay>
+                <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/mp4">
+                Like, come on... you can't play this video with internet explorer... haha...
+            </video>
+        {% endif %}
+        <div class="upload title">
+            <h1>{{ upload.title }}</h1>
+            <p class="upload date">
+                {{ upload.date | date: "%d %B, %Y" }}
+            </p>
+        </div>
+    </div>
+    <div class="upload lower">
+        <p>{{ upload.content }}</p>
+    </div>
+</main>

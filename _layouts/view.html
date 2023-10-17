@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{% assign id = page.path | split: '/' | last | split: '.' | first %}
+{% assign index = id | minus: 1 %}
+
+{% assign uploads = site.uploads %}
+{% assign upload =  uploads[index] %}
+
+{% include pagination.html %}
+{% include view.html %}

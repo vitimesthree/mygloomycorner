@@ -1,0 +1,15 @@
+<nav class="navigation">
+    <ul>
+    {% for item in site.data.navigation %}
+        {% assign url = item.link %}
+        {% if item.link != "/" %}
+            {% assign url = url | append: ".html" %}
+        {% endif %}
+        <li>
+            <a href="{{ item.link | prepend:site.baseurl }}" {% if page.url == url %}class="selected"{% endif %}>
+                {{ item.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

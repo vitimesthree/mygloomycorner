@@ -1,0 +1,162 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    @include font('default');
+    @include wrapper('default');
+    text-align: center;
+}
+
+a {
+    color: inherit;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+img {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    image-rendering: pixelated;
+}
+
+.header {
+    margin-bottom: 1rem;
+
+    .navigation {
+        ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+}
+
+.logo {
+    font-size: 2rem;
+    margin: 1rem auto;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.content {
+    @include width('content');
+    width: 90%;
+    margin: 0 auto 9rem;
+}
+
+.upload {
+    &-view {
+        .upper {
+            .title {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.8rem;
+                line-height: 0.5rem;
+            }
+
+            .date {
+                font-size: 0.8rem;
+            }
+        }
+
+        .lower {
+            text-align: left;
+        }
+    }
+
+    &-nav {
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin: 1rem auto;
+            }
+        }
+
+        .list {
+            display: flex;
+        }
+        
+        .thumbnail {
+            margin-right: 1rem;
+
+            img {
+                $size: 6rem;
+                width: $size * 1.2;
+                height: $size;
+                object-fit: cover;
+            }
+        }
+
+        .info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .title {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            h2, p {
+                margin: 0;
+            }
+        }
+
+        .description {
+            opacity: 0.8;
+        }
+    }
+
+    &-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        margin: 1rem auto;
+
+        .control {
+            width: 3rem;
+            font-size: 2rem;
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .previous {
+            text-align: left;
+        }
+        .next {
+            text-align: right;
+        }
+
+        .current {
+            font-size: 1rem;
+        }
+
+        .disabled {
+            opacity: 0.5;
+        }
+    }
+}
