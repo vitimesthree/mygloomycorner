@@ -1,14 +1,5 @@
 ---
 title: null
+url: /
+layout: newestView
 ---
-{% assign uploads = site.uploads %}
-{% assign upload =  uploads | last %}
-
-{% assign size = 0 %}
-{% for upload in uploads %}
-    {% assign size = size | plus: 1 %}
-{% endfor %}
-{% assign index = size | minus: 1 %}
-
-{% include pagination.html %}
-{% include view.html %}

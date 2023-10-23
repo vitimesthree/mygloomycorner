@@ -1,0 +1,39 @@
+{% comment %} Define the variables for meta tags {% endcomment %}
+{% assign metaUrl = site.url | append: page.url %}
+
+{% if page.title %}
+    {% assign metaTitle = page.title %}
+{% else %}
+    {% assign metaTitle = site.title %}
+{% endif %}
+
+{% assign metaDescription = site.description %}
+
+{% if page.image %}
+    {% if page.collection %}
+        {% assign metaImage = page.image | prepend: 'uploads/' | prepend: site.imageurl | prepend: site.url %}
+    {% else %}
+        {% assign metaImage = page.image | prepend: site.imageurl | prepend: site.url %}
+    {% endif %}
+{% else %}
+    {% assign metaImage = site.image | prepend: site.imageurl | prepend: site.url %}
+{% endif %}
+
+{% comment %} Apply the variables to the meta tags {% endcomment %}
+<!-- Google Meta Tags -->
+<meta name="description" content="{{ metaDescription }}" />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="{{ metaUrl }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ metaTitle }}">
+<meta property="og:description" content="{{ metaDescription }}">
+<meta property="og:image" content="{{ metaImage }}">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="mygloomycorner.com">
+<meta property="twitter:url" content="{{ metaUrl }}">
+<meta name="twitter:title" content="{{ metaTitle }}">
+<meta name="twitter:description" content="{{ metaDescription }}">
+<meta name="twitter:image" content="{{ metaImage }}">

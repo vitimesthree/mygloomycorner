@@ -2,11 +2,9 @@
     <ul>
     {% for item in site.data.navigation %}
         {% assign url = item.link %}
-        {% if item.link != "/" %}
-            {% assign url = url | append: ".html" %}
-        {% endif %}
+        {% assign currentUrl = page.url | split: '.' | first %}
         <li>
-            <a href="{{ item.link | prepend:site.baseurl }}" {% if page.url == url %}class="selected"{% endif %}>
+            <a href="{{ item.link | prepend: site.url }}" {% if url == currentUrl %}class="selected"{% endif %}>
                 {{ item.name }}
             </a>
         </li>

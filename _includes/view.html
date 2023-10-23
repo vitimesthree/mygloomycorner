@@ -4,13 +4,12 @@
             <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ title }}">
         {% elsif upload.video %}
             <video controls>
-                <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/mp4">
+                <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/webm">
                 Like, come on... you can't play this video with internet explorer... haha...
             </video>
-        {% comment %} TODO: Add video support to archive and styling {% endcomment %}
         {% elsif upload.gif %}
-            <video muted loop autoplay>
-                <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/mp4">
+            <video muted autoplay loop>
+                <source src="{{ upload.gif | prepend: 'uploads/' | prepend: site.videourl }}" type="video/webm">
                 Like, come on... you can't play this video with internet explorer... haha...
             </video>
         {% endif %}
