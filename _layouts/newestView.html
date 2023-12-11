@@ -1,13 +1,29 @@
 ---
 layout: default
 ---
+{% comment %} 
+    This page shows the latest upload. This changes with every new upload.
+    It inherits from the default view.
+{% endcomment %}
+
+{% comment %} 
+    Retrieve the latest upload.
+{% endcomment %}
 {% assign uploads = site.uploads %}
 {% assign upload =  uploads | last %}
 
+{% comment %} 
+    Calculate the size of the uploads collection.
+{% endcomment %}
 {% assign size = 0 %}
 {% for upload in uploads %}
     {% assign size = size | plus: 1 %}
 {% endfor %}
+
+{% comment %} 
+    Assign the calculated size to the index variable.
+    This is needed to allow jumping to the next and previous page.
+{% endcomment %}
 {% assign index = size | minus: 1 %}
 
 {% include pagination.html %}

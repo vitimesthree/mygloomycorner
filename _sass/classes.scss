@@ -1,0 +1,29 @@
+// Flexbox classes
+.flex {
+    display: flex;
+    &-center {
+        @extend .flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+// Seperator styling
+.separator {
+    @include width('content');
+    margin: 0 auto;
+}
+
+// Styling for smiley images
+.smiley {
+    display: inline;
+    width: auto;
+    height: auto;
+}
+
+// Styling for content blocks
+.content {
+    @include width('content');
+    width: 90%;
+    margin: 0 auto;
+}

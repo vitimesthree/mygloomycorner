@@ -1,9 +1,20 @@
 ---
 layout: default
 ---
+{% comment %} 
+    This page shows a single upload.
+    It inherits from the default view.
+{% endcomment %}
+
+{% comment %} 
+    Get the ID from the URL and use it to find the upload.
+{% endcomment %}
 {% assign id = page.path | split: '/' | last | split: '.' | first %}
 {% assign index = id | minus: 1 %}
 
+{% comment %} 
+    Get all uploads and find the current upload using the index.
+{% endcomment %}
 {% assign uploads = site.uploads %}
 {% assign upload =  uploads[index] %}
 

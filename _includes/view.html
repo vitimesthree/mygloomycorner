@@ -1,4 +1,8 @@
 <main class="upload-view">
+    {% comment %}
+        This is the main window for the upload view.
+        It will display whichever type of upload is defined.
+    {% endcomment %}
     <div class="upload upper">
         {% if upload.image %}
             <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ title }}">
@@ -20,7 +24,10 @@
             </p>
         </div>
     </div>
-    <div class="upload lower">
+    {% comment %}
+        Show the description if there is one.
+    {% endcomment %}
+    <div class="upload description">
         <p>{{ upload.content }}</p>
     </div>
 </main>

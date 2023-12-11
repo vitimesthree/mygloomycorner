@@ -1,6 +1,6 @@
 ---
 ---
-// Fonts
+// Define fonts
 @font-face {
     font-family: 'Needleteeth';
     src: url({{ '/assets/fonts/Needleteeth-Spooky.ttf' | prepend: site.baseurl }});
@@ -18,7 +18,9 @@
     src: url({{ "/assets/fonts/OldStandardTT-Italic.ttf" | prepend: site.baseurl }});
 }
 
-// CSS
+// Import SCSS
 @import "variables";
 @import "mixin";
 @import "styles";
+@import "classes";
+@import "site";

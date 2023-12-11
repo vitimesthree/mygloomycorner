@@ -1,6 +1,7 @@
 <nav class="upload-nav">
     <ul>
         {% for upload in uploads %}
+            {% comment %} Show a list of uploads. {% endcomment %}
             <li class="upload list">
                 <a href="{{ upload.url }}">
                     <div class="upload thumbnail">

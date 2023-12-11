@@ -1,5 +1,8 @@
 ---
 ---
+{% comment %} 
+    This view is used to render the base template for all pages.
+{% endcomment %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,11 +10,6 @@
     <meta name="viewport" content="width=device-width">
 
     <!-- Page information -->
-    {% if page.title %}
-        <title>{{ page.title }} - {{ site.title }}</title>
-    {% else %}
-        <title>{{ site.title }}</title>
-    {% endif %}
     <link rel="icon" href={{ "/favicon.ico" | prepend: site.url }}>
 
     <!-- Meta Tags -->

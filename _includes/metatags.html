@@ -1,14 +1,20 @@
-{% comment %} Define the variables for meta tags {% endcomment %}
+{% comment %} Define the variables for meta tags. {% endcomment %}
 {% assign metaUrl = site.url | append: page.url %}
 
+{% comment %} Assign and apply the page title. {% endcomment %}
 {% if page.title %}
     {% assign metaTitle = page.title %}
+    <title>{{ metaTitle }} - {{ site.title }}</title>
 {% else %}
     {% assign metaTitle = site.title %}
+    <title>{{ metaTitle }}</title>
 {% endif %}
 
+{% comment %} Assign and apply the description. {% endcomment %}
 {% assign metaDescription = site.description %}
+<meta name="description" content="{{ metaDescription }}" />
 
+{% comment %} Assign the page image. {% endcomment %}
 {% if page.image %}
     {% if page.collection %}
         {% assign metaImage = page.image | prepend: 'uploads/' | prepend: site.imageurl | prepend: site.url %}
@@ -19,11 +25,8 @@
     {% assign metaImage = site.image | prepend: site.imageurl | prepend: site.url %}
 {% endif %}
 
-{% comment %} Apply the variables to the meta tags {% endcomment %}
-<!-- Google Meta Tags -->
-<meta name="description" content="{{ metaDescription }}" />
-
-<!-- Facebook Meta Tags -->
+{% comment %} Apply the remaining meta tags. {% endcomment %}
+<!-- OpenGraph Meta Tags -->
 <meta property="og:url" content="{{ metaUrl }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ metaTitle }}">

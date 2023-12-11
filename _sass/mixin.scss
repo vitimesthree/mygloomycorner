@@ -9,7 +9,7 @@
 }
 
 // Fonts
-@mixin font($font)
+@mixin font($font: 'default')
 {
     @if $font == 'default'
     {
