@@ -1,0 +1,24 @@
+---
+layout: null
+---
+{%- comment -%} Make an array of blacklisted pages {%- endcomment -%}
+{%- assign blacklist = "404.html|index.html|.css|.txt" | split: "|" -%}
+
+{%- comment -%} Loop through all pages {%- endcomment -%}
+{%- for page in site.pages -%}
+    {%- assign skip = false -%}
+    {%- for string in blacklist -%}
+        {%-  comment  -%} If string is found at the end of the page URL {%- endcomment -%}
+        {%- if page.url contains string -%}
+            {%- assign skip = true -%}
+        {%- endif -%} 
+    {%- endfor -%}
+    {%- if skip == false %}
+{{ site.url | append: page.url }}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- comment -%} Loop through all uploads {%- endcomment -%}
+{%- for upload in site.uploads %}
+{{ site.url | append: upload.url }}
+{%- endfor -%}

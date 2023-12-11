@@ -7,7 +7,9 @@
 	"settings": {
 		"files.associations": {
 			"*.html": "liquid",
+			"*.txt": "liquid",
 			"**/_site/**/*.html": "html",
+			"**/_site/**/*.txt": "xml",
 		}
 	}
 }
