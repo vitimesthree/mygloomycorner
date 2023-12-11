@@ -14,7 +14,7 @@ layout: null
         {%- endif -%} 
     {%- endfor -%}
     {%- if skip == false %}
-{{ site.url | append: page.url }}
+{{ site.url | append: page.url | remove: '.html' | remove: '.md' }}
     {%- endif -%}
 {%- endfor -%}
 
