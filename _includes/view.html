@@ -5,7 +5,7 @@
     {% endcomment %}
     <div class="upload upper">
         {% if upload.image %}
-            <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ title }}">
+            <img src="{{ upload.image | prepend: 'uploads/' | prepend: site.imageurl }}" alt="{{ upload.title }}">
         {% elsif upload.video %}
             <video controls>
                 <source src="{{ upload.video | prepend: 'uploads/' | prepend: site.videourl }}" type="video/webm">
