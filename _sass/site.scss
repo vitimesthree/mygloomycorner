@@ -71,11 +71,10 @@
 
         .list {
             display: flex;
+            gap: 1rem;
         }
         
         .thumbnail {
-            margin-right: 1rem;
-
             img {
                 $size: 6rem;
                 width: $size * 1.2;
