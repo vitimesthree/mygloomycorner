@@ -48,7 +48,7 @@ defaults:
 collections:
   uploads:
     output: true
-    permalink: archive/polygraph/:name
+    permalink: archive/polygraph/:name-:slug
 
 # Build settings
 # theme: minima

@@ -13,8 +13,9 @@
                         <a href="{{ upload.url }}">
                             <h2>{{ upload.title }}</h2>
                         </a>
-                        {% assign filename = upload.url | split: '/' | last %}
-                        <p>{{filename}}</p>
+                        {% comment %} Get index number from filename {% endcomment %}
+                        {% assign index = upload.path | split: '/' | last | split: '.' | first %}
+                        <p>{{ index }}</p>
                     </div>
                     <p class="upload description">{{ upload.date | date: "%d %B, %Y" }}</p>
                 </div>
